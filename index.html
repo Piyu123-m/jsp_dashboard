@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jspiders Dashboard</title>
+    <link rel="stylesheet" href="Bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="Bootstrap/css/mdb.css">
+    <link rel="stylesheet" href="Bootstrap/css/style.css">
+    <link rel="stylesheet" href="Bootstrap/Fonts/fontawesome-free-6.4.2-web/css/all.css">
+</head>
+
+<body>
+
+    <!-- NavBar -->
+    <nav class="navbar navbar-dark bg-dark navbar-expand-md">
+        <div class="container">
+            <a href="index.html" class="navbar-brand text-warning">
+                <i class="fa fa-snowflake pr-2"></i>Jspiders</a>
+
+            <button class="navbar-toggler" data-target="#links" data-toggle="collapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="links">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">
+                            <i class="fa fa-chart-bar pr-1 text-muted"></i>Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="tasks.html" class="nav-link">
+                            <i class="fa fa-list pr-1 text-muted"></i>Tasks</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="category.html" class="nav-link">
+                            <i class="fa fa-sitemap pr-1 text-muted"></i>Category</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="employees.html" class="nav-link">
+                            <i class="fa fa-users pr-1 text-muted"></i>Employees</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                        <a href="index.html" class="nav-link" data-toggle="dropdown">
+                            <i class="fa fa-sign-in-alt pr-1 text-muted"></i>Piyush</a>
+
+                        <div class="dropdown-menu">
+                            <a href="profile.html" class="dropdown-item"> <i
+                                    class="fa fa-user-circle pr-2"></i>Profile</a>
+                            <a href="settings.html" class="dropdown-item"><i class="fa fa-cogs pr-2"></i>Settings</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="login.html" class="nav-link">
+                            <i class="fa fa-sign-out-alt pr-1 text-muted"></i>LogOut</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- section -->
+    <div class="bg-dash">
+        <h1><a href="" class="text-white"><i class="fa-solid fa-chart-bar pr-3 pl-3 fa-5 text-muted"></i>Dashboard</a>
+        </h1>
+    </div>
+
+    <!-- some task category employees -->
+    <section class="bg-light p-2">
+
+        <div class="row md text-center">
+            <button class="col btn btn-lr bg-danger text-white pr-5" data-target="#task-modal" data-toggle="modal">
+                <i class="fa fa-plus-circle pr-2"></i>ADD TASKS
+            </button>
+            <button class="col btn btn-lr bg-success text-white pr-5" data-target="#category-modal" data-toggle="modal">
+                <i class="fa fa-plus-circle pr-2"></i>ADD CATEGORIES
+            </button>
+            <button class="col btn btn-lr bg-warning text-white pr-5" data-target="#employee-modal" data-toggle="modal">
+                <i class="fa fa-plus-circle pr-2"></i>ADD EMPLOYEES
+            </button>
+        </div>
+
+    </section>
+
+
+    <!-- Add Task Modal -->
+    <div class="modal" id="task-modal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-danger text-white">
+                    <h2>Add Task</h2>
+                    <button class="close" data-dismiss="modal">
+                        <i class="fa fa-times-circle"></i>
+                    </button>
+                </div>
+                <div class="modal-body bg-light">
+                    <form>
+                        <div class="form-group">
+                            <label class="form-check-label">Task</label>
+                            <input type="text" name="" placeholder="Enter Task" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-check-label">Category</label>
+                            <select class="form-control">
+                                <option>Select Category</option>
+                                <option>Developement</option>
+                                <option>Testing</option>
+                                <option>Bug Fixing</option>
+                                <option>Production</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-check-label">Image Upload</label><br>
+                            <input type="file" name=""><br>
+                            <small>Max Size:3mb</small>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-check-label">Description</label><br>
+                            <textarea class="form-control" id="editor"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" name="" value="Add Task" class="btn btn-md btn-danger">
+                            <a href="" class="btn btn-danger btn-md" data-dismiss="modal">Close</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Add Category Modal -->
+    <div class="modal" id="category-modal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content ">
+                <div class="modal-header bg-success text-white">
+                    <h2>Add Category</h2>
+                    <button class="close" data-dismiss="modal">
+                        <i class="fa fa-times-circle"></i>
+                    </button>
+                </div>
+                <div class="modal-body bg-light">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" name="" placeholder="Enter Category" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="date" name="" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" name="" value="Add Category" class="btn btn-md btn-success">
+                            <a href="" class="btn btn-success btn-md" data-dismiss="modal">Close</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Employee modal -->
+    <div class="modal" id="employee-modal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-secondary text-white">
+                    <h2>Add Employee</h2>
+                    <button class="close" data-dismiss="modal">
+                        <i class="fa fa-times-circle"></i>
+                    </button>
+                </div>
+                <div class="modal-body bg-light">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" name="" placeholder="Enter Employee Name" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="" placeholder="Enter Password" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="" placeholder="Enter Default Password" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" name="" value="Add Employee" class="btn btn-md btn-secondary">
+                            <a href="" class="btn btn-secondary btn-md" data-dismiss="modal">Close</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Table -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-9">
+                <div class="card">
+                    <div class="card-header bg-black">
+                        <h3>Current Tasks</h3>
+                    </div>
+                    <div class="card-body bg-light">
+                        <table class="text-center m-0">
+                            <thead>
+                                <tr>
+                                    <th class="text-center ">S.NO</th>
+                                    <th class="text-center ">Name</th>
+                                    <th class="text-center ">Email</th>
+                                    <th class="text-center ">Task</th>
+                                    <th class="text-center ">Category</th>
+                                    <th class="text-center ">level</th>
+                                    <th class="text-center ">Details</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Katrina</td>
+                                    <td>katrina@gmail.com</td>
+                                    <td>Matrix </td>
+                                    <td>Developer</td>
+                                    <td>Medium</td>
+                                    <td><button class="btn btn-outline-black bg-light">Details</button></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Sahil</td>
+                                    <td>psahil@gmail.com</td>
+                                    <td>Manager</td>
+                                    <td>Senior Manager</td>
+                                    <td>Medium</td>
+                                    <td><button class="btn btn-outline-black bg-light">Details</button></td>
+                                </tr>
+                                <tr class="text-center">
+                                    <td>3</td>
+                                    <td>Roshan</td>
+                                    <td>roshan@gmail.com</td>
+                                    <td>Bug Fixing</td>
+                                    <td>Developer</td>
+                                    <td>Medium</td>
+                                    <td><button class="btn btn-outline-black bg-light">Details</button></td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Anwesh</td>
+                                    <td>pandaanwesh@gmail.com</td>
+                                    <td>Back-end Developer</td>
+                                    <td>Developer</td>
+                                    <td>Hard</td>
+                                    <td><button class="btn btn-outline-black bg-light">Details</button></td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Abhipraya</td>
+                                    <td>abhi@gmail.com</td>
+                                    <td>Matrix Component Developing</td>
+                                    <td>SDE-1</td>
+                                    <td>Hard</td>
+                                    <td><button class="btn btn-outline-black bg-light">Details</button></td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>Sagarika</td>
+                                    <td>sags05@gmail.com</td>
+                                    <td>Analyst</td>
+                                    <td>Senior Analyst</td>
+                                    <td>Medium</td>
+                                    <td><button class="btn btn-outline-black bg-light">Details</button></td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>Piyush</td>
+                                    <td>piyushpurohit040@gmail.com</td>
+                                    <td>Java Developer</td>
+                                    <td>Developer</td>
+                                    <td>Hard</td>
+                                    <td><button class="btn btn-outline-black bg-light">Details</button></td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>Piyush</td>
+                                    <td>piyushpurohit040@gmail.com</td>
+                                    <td>Java Developer</td>
+                                    <td>Developer</td>
+                                    <td>Hard</td>
+                                    <td><button class="btn  btn-outline-black bg-light">Details</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="card mb-3">
+                    <div class="card-header bg-danger text-center">
+                        <div class="row align-items-center">
+                            <div class="col text-white">
+                                <i class="fa-solid fa-list " style="font-size: 60px;"></i>
+                            </div>
+                            <div class="col text-white">
+                                <h4>08</h4>
+                                <h3>Tasks</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body text-center text-info">
+                        <p>View Details <i class="fa-solid fa-circle-arrow-right pl-2"
+                                style="font-size:25px;color:red"></i></p>
+                    </div>
+                </div>
+                <div class="card mb-3">
+                    <div class="card-header bg-success text-center text-warning">
+                        <div class="row align-items-center">
+                            <div class="col text-white">
+                                <i class="fa-solid fa-list " style="font-size: 60px; "></i>
+                            </div>
+                            <div class="col text-white">
+                                <h4>08</h4>
+                                <h3>Category</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body text-center text-danger">
+                        <p>View Details <i class="fa-solid fa-circle-arrow-right pl-2 "
+                                style="font-size:25px ;color:green"></i></p>
+                    </div>
+                </div>
+                <div class="card ">
+                    <div class="card-header bg-add text-center">
+                        <div class="row align-items-center">
+                            <div class="col text-white">
+                                <i class="fa-solid fa-list" style="font-size: 60px; "></i>
+                            </div>
+                            <div class="col text-white">
+                                <h4>08</h4>
+                                <h3>Employees</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body text-center text-warning">
+                        <p>View Details <i class="fa-solid fa-circle-arrow-right pl-2 "
+                                style="font-size:25px; color:purple"></i></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class=" bg-black text-center p-1">
+                <h4>CopyRight:&copy2023 </h4>
+                <h6>All Rights are Reserver </h6>
+            </div>
+        </footer>
+
+        <!-- ---- scripts ----- -->
+        <script src="Bootstrap/JS/jquery.js"></script>
+        <script src="Bootstrap/JS/popper.js"></script>
+        <script src="Bootstrap/JS/bootstrap.js"></script>
+        <script src="Bootstrap/JS/mdb.js"></script>
+</body>
+
+</html>
